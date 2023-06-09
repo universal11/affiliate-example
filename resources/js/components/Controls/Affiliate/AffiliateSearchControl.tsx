@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { AffiliateSearch } from '../../Classes/AffiliateSearch';
-import { DeepClone } from '../../Classes/DeepClone';
+import { AffiliateSearch } from '../../../Classes/AffiliateSearch';
+import { DeepClone } from '../../../Classes/DeepClone';
 
 interface AffiliateSearchControlProps {
     className?: string;
