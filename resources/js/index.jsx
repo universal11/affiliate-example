@@ -12,4 +12,17 @@ import './bootstrap';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import './components/Example';
+import {App} from './App';
+
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route, useNavigate, useParams } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+  );
