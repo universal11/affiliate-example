@@ -21,7 +21,11 @@ interface AffiliateListPageState {
 export class AffiliateListPage extends React.Component<AffiliateListPageProps, AffiliateListPageState> {
 
     static defaultProps = {
-        affiliateSearch: AffiliateSearch.initWithDistanceInKilometers(100),
+        affiliateSearch: AffiliateSearch.initWith(
+            53.3340285,
+            -6.2535495,
+            100
+        ),
         affiliateList: {
             isLoading: false,
             affiliates: []
@@ -34,7 +38,7 @@ export class AffiliateListPage extends React.Component<AffiliateListPageProps, A
     }
     
     componentDidMount(){
-        
+        this.getAffiliates();
     }
 
     getStateFromProps(props){
