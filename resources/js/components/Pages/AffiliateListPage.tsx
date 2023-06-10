@@ -88,18 +88,24 @@ export class AffiliateListPage extends React.Component<AffiliateListPageProps, A
             <div className="container mt-5">
                 <div className="row justify-content-center">
                     <div className="col-md-4">
-                        <AffiliateSearchControl 
-                            affiliateSearch={this.state.affiliateSearch}
-                            onChange={this.affiliateSearchControl_onChange}
-                        />
-                        <button 
-                            type="button" 
-                            className="btn btn-secondary btn-dark" 
-                            onClick={this.searchButton_onClick}
-                            disabled={this.state.affiliateList.isLoading}
-                        >
-                            Search
-                        </button>
+                        <div className="card shadow-lg">
+                            <div className="card-body">
+                                <AffiliateSearchControl 
+                                    affiliateSearch={this.state.affiliateSearch}
+                                    onChange={this.affiliateSearchControl_onChange}
+                                />
+                                <button 
+                                    type="button" 
+                                    className="btn btn-secondary btn-dark" 
+                                    onClick={this.searchButton_onClick}
+                                    disabled={this.state.affiliateList.isLoading}
+                                >
+                                    Search
+                                </button>
+                            </div>
+                            
+                        </div>
+                        
                     </div>
                 </div>
                 <AffiliateCardList 
