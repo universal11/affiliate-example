@@ -28,7 +28,7 @@ export class AffiliateSearchControl extends React.Component<AffiliateSearchContr
         const latitude = event.target.value;
         if(!isNaN(latitude)){
             const affiliateSearch = DeepClone.make(this.props.affiliateSearch);
-            affiliateSearch.latitude = Number(latitude);
+            affiliateSearch.latitude = latitude;
             if(this.props.onChange){
                 this.props.onChange(affiliateSearch);
             }
@@ -39,7 +39,7 @@ export class AffiliateSearchControl extends React.Component<AffiliateSearchContr
         const longitude = event.target.value;
         if(!isNaN(longitude)){
             const affiliateSearch = DeepClone.make(this.props.affiliateSearch);
-            affiliateSearch.longitude = Number(longitude);
+            affiliateSearch.longitude = longitude;
             if(this.props.onChange){
                 this.props.onChange(affiliateSearch);
             }
@@ -50,7 +50,7 @@ export class AffiliateSearchControl extends React.Component<AffiliateSearchContr
         const maxDistanceInKilometers = event.target.value;
         if(!isNaN(maxDistanceInKilometers)){
             const affiliateSearch = DeepClone.make(this.props.affiliateSearch);
-            affiliateSearch.maxDistanceInKilometers = Number(maxDistanceInKilometers);
+            affiliateSearch.maxDistanceInKilometers = maxDistanceInKilometers;
             if(this.props.onChange){
                 this.props.onChange(affiliateSearch);
             }
