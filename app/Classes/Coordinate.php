@@ -16,7 +16,7 @@ class Coordinate {
         return $coordinate;
     }
 
-    public function getKilometerDistance($coordinate){
+    public function getDistanceInKilometers($coordinate){
         $earthRadius = 6371;
   
         $originLatitude = deg2rad($this->latitude);

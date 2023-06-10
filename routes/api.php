@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get("/affiliate/getAll", [AffiliateController::class, "getAll"]);
+
+Route::post("/affiliate/search", [AffiliateController::class, "search"]);

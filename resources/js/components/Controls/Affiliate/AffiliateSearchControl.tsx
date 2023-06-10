@@ -28,7 +28,7 @@ export class AffiliateSearchControl extends React.Component<AffiliateSearchContr
         const latitude = event.target.value;
         if(!isNaN(latitude)){
             const affiliateSearch = DeepClone.make(this.props.affiliateSearch);
-            affiliateSearch.latitude = latitude;
+            affiliateSearch.latitude = Number(latitude);
             if(this.props.onChange){
                 this.props.onChange(affiliateSearch);
             }
@@ -39,7 +39,7 @@ export class AffiliateSearchControl extends React.Component<AffiliateSearchContr
         const longitude = event.target.value;
         if(!isNaN(longitude)){
             const affiliateSearch = DeepClone.make(this.props.affiliateSearch);
-            affiliateSearch.longitude = longitude;
+            affiliateSearch.longitude = Number(longitude);
             if(this.props.onChange){
                 this.props.onChange(affiliateSearch);
             }
@@ -50,7 +50,7 @@ export class AffiliateSearchControl extends React.Component<AffiliateSearchContr
         const maxDistanceInKilometers = event.target.value;
         if(!isNaN(maxDistanceInKilometers)){
             const affiliateSearch = DeepClone.make(this.props.affiliateSearch);
-            affiliateSearch.maxDistanceInKilometers = maxDistanceInKilometers;
+            affiliateSearch.maxDistanceInKilometers = Number(maxDistanceInKilometers);
             if(this.props.onChange){
                 this.props.onChange(affiliateSearch);
             }
@@ -75,7 +75,7 @@ export class AffiliateSearchControl extends React.Component<AffiliateSearchContr
                         type="text" 
                         className="form-control"
                         value={( (this.props.affiliateSearch.longitude != null) ? this.props.affiliateSearch.longitude : "" )} 
-                        onChange={this.latitude_onChange}
+                        onChange={this.longitude_onChange}
                     />
                 </div>
                 <div className="mb-3">

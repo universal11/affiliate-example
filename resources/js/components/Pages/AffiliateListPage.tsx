@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { toast } from "react-toastify";
 
 import { AffiliateSearchControl } from "../Controls/Affiliate/AffiliateSearchControl";
 import { AffiliateSearch } from '../../Classes/AffiliateSearch';
@@ -60,7 +61,7 @@ export class AffiliateListPage extends React.Component<AffiliateListPageProps, A
         this.setState({
             affiliateList
         });
-        AffiliateHttpClient.getAll().then((response) => {
+        AffiliateHttpClient.search(this.state.affiliateSearch).then((response) => {
             const affiliateList = DeepClone.make(this.state.affiliateList);
             affiliateList.isLoading = false;
             affiliateList.affiliates = response.data.data;
@@ -69,6 +70,12 @@ export class AffiliateListPage extends React.Component<AffiliateListPageProps, A
             });
         }).catch((error) => {
             console.log(error);
+            const affiliateList = DeepClone.make(this.state.affiliateList);
+            affiliateList.isLoading = false;
+            affiliateList.affiliates = [];
+            this.setState({
+                affiliateList
+            });
         });
     }
 
@@ -81,12 +88,20 @@ export class AffiliateListPage extends React.Component<AffiliateListPageProps, A
                             affiliateSearch={this.state.affiliateSearch}
                             onChange={this.affiliateSearchControl_onChange}
                         />
-                        <button type="button" className="btn btn-secondary btn-dark" onClick={this.searchButton_onClick}>Search</button>
+                        <button 
+                            type="button" 
+                            className="btn btn-secondary btn-dark" 
+                            onClick={this.searchButton_onClick}
+                            disabled={this.state.affiliateList.isLoading}
+                        >
+                            Search
+                        </button>
                     </div>
                 </div>
                 <AffiliateCardList 
                     className="row mt-5"
                     itemContainerClassName={"col-md-3 mb-3"}
+                    itemClassName="h-100 shadow-lg"
                     affiliates={this.state.affiliateList.affiliates}
                 />
             </div>

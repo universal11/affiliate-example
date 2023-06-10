@@ -27,8 +27,9 @@ export class AffiliateCardListItem extends React.Component<AffiliateCardListItem
 
             <div className={`card ${this.constructor.name} ${this.props.className}`} >
                 <div className="card-body text-center">
-                    <h6 className="card-title">{this.props.affiliate.name}</h6>
+                    <h5 className="card-title">{this.props.affiliate.name}</h5>
                     <h6 className="card-subtitle">#{this.props.affiliate.id}</h6>
+                    <p className="card-text">{this.props.affiliate.distance_in_kilometers} kilometers</p>
                 </div>
             </div>
         );

@@ -6,4 +6,8 @@ export class AffiliateHttpClient extends HttpClient{
         return HttpClient.get(`api/affiliate/getAll`);
     }
 
+    static search(affiliateSearch){
+        return HttpClient.post(`api/affiliate/search`, affiliateSearch);
+    }
+
 }
